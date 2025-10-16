@@ -19,6 +19,8 @@ namespace TurnedBasedBattleSystem.Classes
 
         public string UnitName { get { return unitName; } }
 
+        public bool IsDead { get { return currentHp <= 0; } }
+
         public Unit(int currentHp, int maxHp, int attackPower, int healPower, string unitName)
         {
             this.currentHp = currentHp;
@@ -42,6 +44,18 @@ namespace TurnedBasedBattleSystem.Classes
         {
             currentHp -= damage;
 
+            if(IsDead)
+                Console.WriteLine($"{unitName} has been defeated!");
+
+        }
+
+        public void Heal()
+        {
+            double rng = random.NextDouble();
+            rng  = rng / 2 + 0.75f;
+            int heal = (int)(healPower * rng);
+            currentHp = heal + currentHp > maxHp ? maxHp : currentHp + heal;
+            Console.WriteLine($"{unitName} heals for {heal} HP!");
         }
     }
 }
