@@ -15,6 +15,10 @@ namespace TurnedBasedBattleSystem.Classes
         private string unitName;
         private Random random;
 
+        public int Hp { get { return currentHp; } }
+
+        public string UnitName { get { return unitName; } }
+
         public Unit(int currentHp, int maxHp, int attackPower, int healPower, string unitName)
         {
             this.currentHp = currentHp;
