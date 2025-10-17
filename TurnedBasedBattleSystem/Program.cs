@@ -6,8 +6,8 @@ namespace TurnedBasedBattleSystem
     {
         static void Main(string[] args)
         {
-            Unit player = new Unit(100, 20, 12, 10, "Player");
-            Unit enemy = new Unit(80, 15, 10, 0, "Enemy");
+            Unit player = new Unit(100,125, 12, 10, "Player");
+            Unit enemy = new Unit(80,90, 10, 0, "Enemy");
             Random random = new Random();
             
             while(!player.IsDead && !enemy.IsDead)
