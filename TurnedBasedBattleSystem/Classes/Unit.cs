@@ -38,6 +38,9 @@ namespace TurnedBasedBattleSystem.Classes
             int randDamage = (int)(attackPower * rng);
             unitToAttck.TakeDamagae(randDamage);
             Console.WriteLine($"{unitName} attacks {unitToAttck.unitName} and deals {randDamage} Damage!");
+            Console.WriteLine("Press to continue...");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public void TakeDamagae(int damage)
@@ -56,6 +59,9 @@ namespace TurnedBasedBattleSystem.Classes
             int heal = (int)(healPower * rng);
             currentHp = heal + currentHp > maxHp ? maxHp : currentHp + heal;
             Console.WriteLine($"{unitName} heals for {heal} HP!");
+            Console.WriteLine("Press to continue...");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
